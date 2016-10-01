@@ -9,7 +9,7 @@ import { before, after, error, around } from 'decorator-advice'
 const logging = msg => console.log(msg);
 class User {
 
-  @before(message => logging(message) )
+  @before(() => logging('hello') )
   getUser() {
     // ... implementation ...
   }
@@ -18,7 +18,7 @@ class User {
 
 ```
 
-If you use this in CommonJS or AMD environment, add 'default'!
+If you use this in CommonJS or AMD environment:
 
 ```js
 var aspectModule = require('decorator-advice');
