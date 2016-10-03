@@ -13,7 +13,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "babel": "^6.5.2",
     "babel-core": "^6.16.0",
     "babel-jest": "^16.0.0",
     "babel-loader": "^6.2.5",
