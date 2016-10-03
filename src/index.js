@@ -27,7 +27,7 @@ const locationMap = {
                 return prevFunction.apply(this, arguments);
             }
             catch(err) {
-                advice(err);
+                return advice(err);
             }
         }
     }
