@@ -1,5 +1,11 @@
 # ES7 aspect decorator
 
+## Getting Started
+
+```sh
+npm i decorator-advice
+```
+
 ## Usage
 
 ```js
