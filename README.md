@@ -1,5 +1,7 @@
 # ES7 aspect decorator
 
+[![Build Status](https://travis-ci.org/javarouka/decorator-advice.svg)](https://travis-ci.org/javarouka/decorator-advice)
+
 ## Getting Started
 
 ```sh

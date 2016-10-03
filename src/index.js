@@ -8,18 +8,18 @@ const locationMap = {
         return function before() {
             advice(this, arguments);
             return prevFunction.apply(this, arguments);
-        }
+        };
     },
     [AFTER](prevFunction, advice) {
         return function after() {
             const ret = prevFunction.apply(this, arguments);
             return advice(this, ret, arguments);
-        }
+        };
     },
     [AROUND](prevFunction, advice) {
         return function around() {
             return advice(() => prevFunction.apply(this, arguments));
-        }
+        };
     },
     [ERROR](prevFunction, advice) {
         return function around() {
@@ -29,7 +29,7 @@ const locationMap = {
             catch(err) {
                 return advice(err);
             }
-        }
+        };
     }
 };
 
@@ -50,17 +50,17 @@ function aspect({ type, advice }) {
     if(!(type in locationMap)) {
         return function crosscut(target, name, descriptor) {
             return descriptor || target;
-        }
+        };
     }
 
     return function crosscut(target, name, descriptor) {
 
         if(isClassMethod(target, descriptor)) {
-            return crosscutMethod(target, name, descriptor, advice, type)
+            return crosscutMethod(target, name, descriptor, advice, type);
         }
 
         return crosscutFunction(target, advice, type);
-    }
+    };
 }
 
 export function before(advice) { return aspect({ type: BEFORE, advice }); }
@@ -70,4 +70,4 @@ export function error(advice) { return aspect({ type: ERROR, advice }); }
 
 export default {
     before, after, around, error
-}
+};

@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-1": "^6.3.13",
     "cross-env": "^3.0.0",
+    "eslint": "^3.7.0",
     "jest": "^16.0.0",
     "webpack": "^1.13.2"
   },
@@ -33,6 +34,7 @@
     "build": "babel-node ./tool/build",
     "test": "cross-env BABEL_ENV=commonjs jest",
     "test:watch": "npm test -- --watch",
+    "lint": "eslint src",
     "check": "npm test"
   },
   "jest": {
